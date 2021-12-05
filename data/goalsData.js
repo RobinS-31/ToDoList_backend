@@ -33,7 +33,16 @@ const GoalsData = {
     ],
     get goalsList() {
         return this.data;
-    }
+    },
+    set updateGoal(goal) {
+        this.data = this.data.map(goalData => {
+            if (goalData.id === goal.id) {
+                return { ...goalData, ...goal};
+            } else {
+                return goalData
+            }
+        });
+    },
 };
 
 module.exports = GoalsData;
