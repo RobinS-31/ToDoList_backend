@@ -43,6 +43,13 @@ const GoalsData = {
             }
         });
     },
+    set addGoal(goal) {
+        this.data.push({
+            id: new Date().getTime(),
+            active: true,
+            ...goal
+        });
+    }
 };
 
 module.exports = GoalsData;
