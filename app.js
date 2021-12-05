@@ -1,6 +1,9 @@
-// == Import : npm
+// == Import : package
 const express = require('express');
 require('dotenv').config();
+
+// == Import : local
+const goalRoutes = require('./routes/goal');
 
 const app = express();
 app.use((req, res, next) => {
@@ -11,5 +14,6 @@ app.use((req, res, next) => {
     next();
 });
 app.use(express.json());
+app.use('/api/goals', goalRoutes);
 
 module.exports = app;
