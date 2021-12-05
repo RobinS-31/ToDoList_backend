@@ -49,6 +49,9 @@ const GoalsData = {
             active: true,
             ...goal
         });
+    },
+    set removeGoal(id) {
+        this.data = this.data.filter(goal => goal.id !== id);
     }
 };
 
